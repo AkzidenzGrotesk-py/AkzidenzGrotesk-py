@@ -1,6 +1,8 @@
 # akzidenz
 Hello! Go explore some of my projects or [AkzidenzGrotesk-py.github.io](https://akzidenzgrotesk-py.github.io/index.html).
 
+There are no actual complete anything here. I just keep my code here as an organized archive.
+
 ### Projects
 *All (a large portion) of my projects have README.md and DOC.md, read those for more info.*
 - [/WindowsBatch/](https://github.com/AkzidenzGrotesk-py/WindowsBatch) - Some programming projects written in Windows Batch.
