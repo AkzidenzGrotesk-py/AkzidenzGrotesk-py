@@ -7,6 +7,8 @@ I draw maps, I am most proud of [this fantasy atlas style map](https://github.co
 
 I keep my code here as an "organized" archive. Don't expect well written code or anything.
 
+Some of this code is at least 5 years old, I've been writing code since ~2014.
+
 ### Projects
 *All (a large portion) of my projects have README.md and DOC.md, read those for more info.*
 - [/PythonProjects/](https://github.com/AkzidenzGrotesk-py/PythonProjects) - My python projects that are not interesting enough to be placed somewhere of value.
