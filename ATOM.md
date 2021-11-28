@@ -12,7 +12,11 @@
 /*    editor.less    */
 ...
 .cursor {
+  // empty box cursor
   border: 1px solid @syntax-cursor-color;
+  // or L bracket cursor
+  border-left: 2px solid @syntax-cursor-color;
+  border-bottom: 2px solid @syntax-cursor-color;
 }
 ...
 .find-result .region.region.region {
