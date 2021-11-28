@@ -8,7 +8,7 @@
   - **block-cursor:** _border_ #5d84d1, _background_ transparent, _style_ bordered-box, _border width_ 1
 
 ## Customized Dark One Dark
-```css
+```less
 /*    editor.less    */
 ...
 .cursor {
