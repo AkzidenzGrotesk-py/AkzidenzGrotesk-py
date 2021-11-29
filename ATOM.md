@@ -16,6 +16,19 @@
   // or L bracket cursor
   border-left: 2px solid @syntax-cursor-color;
   border-bottom: 2px solid @syntax-cursor-color;
+  
+  box-sizing: border-box;
+}
+
+.selection .region {
+  ...
+  border: 1px solid lighten(@syntax-selection-color, 4%);
+  box-sizing: border-box;
+}
+
+.bracket-matcher .region {
+  ...
+  background: @syntax-selection-color;
 }
 ...
 .find-result .region.region.region {
