@@ -16,6 +16,8 @@
   // or L bracket cursor
   border-left: 2px solid @syntax-cursor-color;
   border-bottom: 2px solid @syntax-cursor-color;
+  // add for [ bracket curspr
+  border-top: 2px solid @syntax-cursor-color;
   
   box-sizing: border-box;
 }
