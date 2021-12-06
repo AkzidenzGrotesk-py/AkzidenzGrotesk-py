@@ -20,4 +20,4 @@ Some of this code is at least 5 years old, I've been writing code since ~2014.
 - [/TypeDesign/](https://github.com/AkzidenzGrotesk-py/TypeDesign) - My type and typography projects, most of them are very low quality and not well kerned.
 
 ### Other
-- [/aoc-2021/](- [/aoc-2021/](https://github.com/AkzidenzGrotesk-py/aoc-2021) - Advent of Code 2021 (in Python 3.10)
+- [/aoc-2021/](https://github.com/AkzidenzGrotesk-py/aoc-2021) - Advent of Code 2021 (in Python 3.10)
