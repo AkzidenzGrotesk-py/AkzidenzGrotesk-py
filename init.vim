@@ -1,9 +1,9 @@
 "Vim Configuration, akzidenz
 "nvim -> Windows Terminal w/ Iosevka Term Regular @ h11, padding 12
 "
-" set guifont=Iosevka_Term
-" set guioptions-=m
-" set guioptions-=T
+set guifont=Iosevka
+set guioptions-=m
+set guioptions-=T
 " Plug 'wfxr/minimap.vim'
 
 
@@ -22,7 +22,7 @@ set mouse=a
 
 " Indentation and tabs
 set tabstop=2
-set shiftwidth=4
+set shiftwidth=2
 set autoindent
 set expandtab
 set cinoptions=l1
@@ -49,6 +49,11 @@ Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-syntastic/syntastic'
 Plug 'https://github.com/preservim/tagbar'
 Plug 'https://github.com/davidhalter/jedi-vim'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug 'junegunn/fzf'
 call plug#end()
 
 "airline
@@ -59,6 +64,11 @@ let g:airline_powerline_fonts = 1
 let g:minimap_width = 10
 let g:minimap_auto_start = 1
 let g:minimap_auto_start_win_enter = 1
+
+"languageclient-neovim
+let g:LanguageClient_serverCommands = {
+  \ 'cpp': ['clangd'],
+  \ }
 
 "tagbar
 nmap <C-R> :TagbarToggle<CR>
