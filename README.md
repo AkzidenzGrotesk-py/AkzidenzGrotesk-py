@@ -11,11 +11,13 @@ Some of this code is at least 5 years old, I've been writing code since ~2014.
 
 **_Languages:_** Python, C, COBOL, CASIO Basic, HTML, CSS, JS
 
-### Projects
-*All (a large portion) of my projects have README.md and DOC.md, read those for more info.*
+### Project Collections
 - [/PythonProjects/](https://github.com/AkzidenzGrotesk-py/PythonProjects) - My python projects that are not interesting enough to be placed somewhere of value.
 - [/OtherProjects/](https://github.com/AkzidenzGrotesk-py/OtherProjects) - Any programming project that is not in CBASIC, Batch or Python. Which is mostly C and JS.
 - [/DungeonsAndDragons/](https://github.com/AkzidenzGrotesk-py/DungeonsAndDragons) - D&amp;D Projects - mostly maps and art
 - [/WindowsBatch/](https://github.com/AkzidenzGrotesk-py/WindowsBatch) - Some programming projects written in Windows Batch.
 - [/CasioBasic/](https://github.com/AkzidenzGrotesk-py/CasioBasic) - Casio BASIC programming projects. Casio BASIC is the programming language used on Casio devices, you can actually write C for the calculator, which adds more flair (and speed).
 - [/TypeDesign/](https://github.com/AkzidenzGrotesk-py/TypeDesign) - My type and typography projects, most of them are very low quality and not well kerned.
+
+### Other
+- [/aoc-2021/](- [/aoc-2021/](https://github.com/AkzidenzGrotesk-py/aoc-2021) - Advent of Code 2021 (in Python 3.10)
