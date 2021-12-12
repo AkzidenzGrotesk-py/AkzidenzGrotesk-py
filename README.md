@@ -3,7 +3,9 @@ Hello! Most of the stuff here is personal projects and side things, some odd scr
 
 I draw maps, I am most proud of [this fantasy atlas style map](https://github.com/AkzidenzGrotesk-py/DungeonsAndDragons/blob/main/RennetaRange_GarhusTerritory_AtlasMap.png) which turned out nice, but I do other styles too.
 
-I keep my code here as an archive. Don't expect well written code or anything. Configurations: [init.vim](https://github.com/AkzidenzGrotesk-py/AkzidenzGrotesk-py/blob/main/init.vim) & [Atom](https://github.com/AkzidenzGrotesk-py/AkzidenzGrotesk-py/blob/main/ATOM.md) (not config.cson)
+I keep my code here as an archive. Don't expect well written code or anything. 
+
+**_Configurations:_** [init.vim](https://github.com/AkzidenzGrotesk-py/AkzidenzGrotesk-py/blob/main/init.vim) & [Atom](https://github.com/AkzidenzGrotesk-py/AkzidenzGrotesk-py/blob/main/ATOM.md) (not config.cson)
 
 **_Primary Languages:_** Python, C
 
