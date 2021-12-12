@@ -14,7 +14,7 @@ set autochdir
 function LoadDefaultByFileType(filetype)
   let curFileSize = getfsize(@%)
   if (curFileSize==0) || (curFileSize==-1)
-    let file_loc = "..\\nvim\\fdefaults\\default." . a:filetype
+    let file_loc = "~\\nvim\\fdefaults\\default." . a:filetype
     let failed = append(0, readfile(file_loc))
     if (failed)
       echo "Unable to add default text."
@@ -62,7 +62,7 @@ set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:↩,precedes:«,extends:
 set scrolloff=20
 
 "vim-plug
-call plug#begin('..\nvim\myplugins')
+call plug#begin('~\nvim\myplugins')
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-syntastic/syntastic'
 Plug 'https://github.com/preservim/tagbar'
