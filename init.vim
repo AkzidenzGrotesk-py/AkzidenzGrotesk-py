@@ -1,16 +1,33 @@
-"Vim Configuration, akzidenz
-"nvim -> Windows Terminal w/ Iosevka Term Regular @ h11, padding 12
+"Neovim Configuration, akzidenz
+"nvim -> Windows Terminal w/ Iosevka Term Regular @ h12, padding 12
 "
-set guifont=Iosevka
+set guifont=Iosevka\ Term\ 12
 set guioptions-=m
 set guioptions-=T
-" Plug 'wfxr/minimap.vim'
-
 
 syntax on
 filetype plugin indent on
 set noswapfile
 set autochdir
+
+" Default file values
+function LoadDefaultByFileType(filetype)
+  let curFileSize = getfsize(@%)
+  if (curFileSize==0) || (curFileSize==-1)
+    let file_loc = "..\\nvim\\fdefaults\\default." . a:filetype
+    let failed = append(0, readfile(file_loc))
+    if (failed)
+      echo "Unable to add default text."
+    else
+      let &modified = 1
+    endif
+  endif
+endfunction
+
+autocmd FileType python call LoadDefaultByFileType("py")
+autocmd FileType c call LoadDefualtByFileType("c")
+autocmd FileType html call LoadDefaultByFileType("html")
+autocmd FileType css call LoadDefaultByFileType("css")
 
 " Keys
 inoremap jk <ESC>
@@ -39,12 +56,13 @@ set number
 
 " Visuals
 colorscheme onedark
+set termguicolors
 set list
 set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:↩,precedes:«,extends:»
 set scrolloff=20
 
 "vim-plug
-call plug#begin('C:\Users\Kazuto (^^)\AppData\Local\nvim\myplugins')
+call plug#begin('..\nvim\myplugins')
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-syntastic/syntastic'
 Plug 'https://github.com/preservim/tagbar'
@@ -54,11 +72,13 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 Plug 'junegunn/fzf'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 "airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline_theme="tokyonight"
 
 "minimap
 let g:minimap_width = 10
@@ -68,6 +88,7 @@ let g:minimap_auto_start_win_enter = 1
 "languageclient-neovim
 let g:LanguageClient_serverCommands = {
   \ 'cpp': ['clangd'],
+  \ 'c' : ['clangd'],
   \ }
 
 "tagbar
