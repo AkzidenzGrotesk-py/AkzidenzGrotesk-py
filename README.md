@@ -17,5 +17,5 @@ I keep my code here as an archive. Don't expect well written code or anything.
 - [/CasioBasic/](https://github.com/AkzidenzGrotesk-py/CasioBasic) - Casio BASIC programming projects. Casio BASIC is the programming language used on Casio devices, you can actually write C for the calculator, which adds more flair (and speed).
 - [/TypeDesign/](https://github.com/AkzidenzGrotesk-py/TypeDesign) - My type and typography projects, most of them are very low quality and not well kerned.
 
-### Projects / Continous
+### Projects / Continuous
 - [/aoc-2021/](https://github.com/AkzidenzGrotesk-py/aoc-2021) - Advent of Code 2021 (in Python 3.10)
