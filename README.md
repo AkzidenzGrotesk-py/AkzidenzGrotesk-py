@@ -19,3 +19,4 @@ I keep my code here as an archive. Don't expect well written code or anything.
 
 ### Projects / Continuous
 - [/aoc-2021/](https://github.com/AkzidenzGrotesk-py/aoc-2021) - Advent of Code 2021 (in Python 3.10)
+- [/Taneleer/](https://github.com/AkzidenzGrotesk-py/Taneleer) - Slack bot for tracking values.
