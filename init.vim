@@ -14,7 +14,7 @@ set autochdir
 function LoadDefaultByFileType(filetype)
   let curFileSize = getfsize(@%)
   if (curFileSize==0) || (curFileSize==-1)
-    let file_loc = "~\\nvim\\fdefaults\\default." . a:filetype
+    let file_loc = "C:\\Users\\Kazuto (^^)\\AppData\\Local\\nvim\\fdefaults\\default." . a:filetype
     let failed = append(0, readfile(file_loc))
     if (failed)
       echo "Unable to add default text."
@@ -25,7 +25,7 @@ function LoadDefaultByFileType(filetype)
 endfunction
 
 autocmd FileType python call LoadDefaultByFileType("py")
-autocmd FileType c call LoadDefualtByFileType("c")
+autocmd FileType c call LoadDefaultByFileType("c")
 autocmd FileType html call LoadDefaultByFileType("html")
 autocmd FileType css call LoadDefaultByFileType("css")
 
@@ -35,7 +35,7 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-set mouse=a
+set mouse= "a
 
 " Indentation and tabs
 set tabstop=2
@@ -55,14 +55,14 @@ set relativenumber
 set number
 
 " Visuals
-colorscheme onedark
+colorscheme gruber-darker
 set termguicolors
 set list
 set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:↩,precedes:«,extends:»
 set scrolloff=20
 
 "vim-plug
-call plug#begin('~\nvim\myplugins')
+call plug#begin('C:\Users\Kazuto (^^)\AppData\Local\nvim\myplugins')
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-syntastic/syntastic'
 Plug 'https://github.com/preservim/tagbar'
@@ -71,14 +71,20 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'vim-airline/vim-airline-themes'
+Plug 'liuchengxu/space-vim-dark'
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'https://github.com/drewtempelmeyer/palenight.vim'
+Plug 'https://github.com/wikitopian/hardmode'
 call plug#end()
 
 "airline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline_theme="tokyonight"
+" let g:airline_powerline_fonts = 1
+" gruber-darker sets to atomic
+" let g:airline_theme="atomic"
 
 "minimap
 let g:minimap_width = 10
