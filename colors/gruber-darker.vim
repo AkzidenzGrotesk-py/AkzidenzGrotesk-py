@@ -12,7 +12,7 @@ let g:colors_name="gruber-darker"
 
 " Normal stuff
 hi Normal guifg=#e4e4e4 guibg=#181818
-hi Comment guifg=#cc8c3c
+hi Comment guifg=#cc8c3c gui=italic
 
 hi Constant guifg=#e4e4e4
 hi String guifg=#749e5a
