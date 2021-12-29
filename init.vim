@@ -14,7 +14,7 @@ set autochdir
 function LoadDefaultByFileType(filetype)
   let curFileSize = getfsize(@%)
   if (curFileSize==0) || (curFileSize==-1)
-    let file_loc = "C:\\Users\\Kazuto (^^)\\AppData\\Local\\nvim\\fdefaults\\default." . a:filetype
+    let file_loc = "~\\AppData\\Local\\nvim\\fdefaults\\default." . a:filetype
     let failed = append(0, readfile(file_loc))
     if (failed)
       echo "Unable to add default text."
