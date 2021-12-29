@@ -2,6 +2,7 @@
 " See: https://github.com/rexim/gruber-darker-theme
 " *NOT* an exact port, simply what I thought looked nice.
 
+
 " Init
 highlight clear
 if exists("syntax_on")
@@ -68,7 +69,7 @@ hi link CursorIM Cursor
 hi link TermCursor Cursor
 hi link TermCursorNC Cursor
 
-hi MatchParen guifg=NONE guibg=NONE gui=bold
+hi MatchParen guifg=NONE guibg=#4E94CB gui=NONE
 hi ModeMsg guifg=#333333
 hi Question guifg=#ffdd33 gui=italic
 
@@ -81,8 +82,8 @@ hi Visual guibg=#484848
 hi ErrorMsg guifg=#f43841 guibg=NONE
 hi WarningMsg guifg=#f43841 guibg=NONE
 
-hi NonText guifg=#222222
-hi SpecialKey guifg=#222222
+hi NonText guifg=#282828
+hi SpecialKey guifg=#282828
 hi EndOfBuffer guifg=#333333
 hi StatusLine guifg=#e4e4e4 guibg=NONE
 hi StatusLineNC guibg=#333333
