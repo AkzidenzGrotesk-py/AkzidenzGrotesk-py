@@ -10,31 +10,29 @@ filetype plugin indent on
 set noswapfile
 set autochdir
 
-" Default file values
-function LoadDefaultByFileType(filetype)
-  let curFileSize = getfsize(@%)
-  if (curFileSize==0) || (curFileSize==-1)
-    let file_loc = "~\\AppData\\Local\\nvim\\fdefaults\\default." . a:filetype
-    let failed = append(0, readfile(file_loc))
-    if (failed)
-      echo "Unable to add default text."
-    else
-      let &modified = 1
-    endif
-  endif
-endfunction
+" Effective fuzzy finder
+set wildmenu
+set path+=**
 
-autocmd FileType python call LoadDefaultByFileType("py")
-autocmd FileType c call LoadDefaultByFileType("c")
-autocmd FileType html call LoadDefaultByFileType("html")
-autocmd FileType css call LoadDefaultByFileType("css")
+" Tags, CTRL+] jumps to tag under cursor
+command! MakeTags !ctags -R .
 
 " Keys
+" copy/paste
+noremap <C-C> "+y
+noremap <C-V> "*p
+" exit insert mode with JK
 inoremap jk <ESC>
+" jump between split buffers
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+" snippets
+nnoremap \dhtml :-1read ~/AppData/Local/nvim/fdefaults/default.html<CR>3jwf>a
+nnoremap \dc :-1read ~/AppData/Local/nvim/fdefaults/default.c<CR>3j$o
+nnoremap \dcss :-1read ~/AppData/Local/nvim/fdefaults/default.css<CR>2jo
+nnoremap \dpython :-1read ~/AppData/Local/nvim/fdefaults/default.py<CR>3j$o
 set mouse= "a
 
 " Indentation and tabs
@@ -62,7 +60,7 @@ set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:↩,precedes:«,extends:
 set scrolloff=20
 
 "vim-plug
-call plug#begin('C:\Users\Kazuto (^^)\AppData\Local\nvim\myplugins')
+call plug#begin('~\AppData\Local\nvim\myplugins')
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-syntastic/syntastic'
 Plug 'https://github.com/preservim/tagbar'
@@ -73,11 +71,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'vim-airline/vim-airline-themes'
-Plug 'liuchengxu/space-vim-dark'
-Plug 'ghifarit53/tokyonight-vim'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'https://github.com/drewtempelmeyer/palenight.vim'
-Plug 'https://github.com/wikitopian/hardmode'
 call plug#end()
 
 "airline
@@ -99,3 +93,24 @@ let g:LanguageClient_serverCommands = {
 
 "tagbar
 nmap <C-R> :TagbarToggle<CR>
+
+" autocomplete: ^n, ^x^f
+" Default file values
+" function LoadDefaultByFileType(filetype)
+"   let curFileSize = getfsize(@%)
+"   if (curFileSize==0) || (curFileSize==-1)
+"     let file_loc = "~\\AppData\\Local\\nvim\\fdefaults\\default." . a:filetype
+"     let failed = append(0, readfile(file_loc))
+"     if (failed)
+"       echo "Unable to add default text."
+"     else
+"       let &modified = 1
+"     endif
+"   endif
+" endfunction
+
+" autocmd FileType python call LoadDefaultByFileType("py")
+" autocmd FileType c call LoadDefaultByFileType("c")
+" autocmd FileType html call LoadDefaultByFileType("html")
+" autocmd FileType css call LoadDefaultByFileType("css")
+" USE SNIPPETS INSTEAD!
