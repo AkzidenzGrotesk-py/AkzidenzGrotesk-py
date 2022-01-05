@@ -60,9 +60,13 @@ hi Todo guifg=#cc8c3c guibg=NONE
 hi LineNrAbove guifg=#333333
 hi LineNrBelow guifg=#333333
 hi LineNr guifg=#ffdd33
+
+autocmd InsertEnter * hi LineNr gui=bold guibg=#030303
+autocmd InsertLeave * hi LineNr gui=NONE guibg=#181818
+
 hi CursorLineNr guifg=#333333
-hi CursorLine guibg=#121212
-hi CursorColumn guibg=#121212
+hi CursorLine guibg=#030303
+hi CursorColumn guibg=#030303
 hi Cursor guifg=#000000 guibg=#ffdd33
 hi link lCursor Cursor
 hi link CursorIM Cursor
