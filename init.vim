@@ -1,7 +1,8 @@
 "Neovim Configuration, akzidenz
 "nvim -> Windows Terminal w/ Iosevka Term Regular @ h12, padding 12
 "
-set guifont=Iosevka\ Term\ 12
+set guifont=Iosevka\ Term:h12
+set guicursor=
 set guioptions-=m
 set guioptions-=T
 
@@ -56,7 +57,7 @@ set number
 colorscheme gruber-darker
 set termguicolors
 set list
-set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:↩,precedes:«,extends:»
+set listchars=tab:→\ ,space:·,nbsp:␣,trail:X,eol:\ ,precedes:«,extends:»
 set scrolloff=20
 
 "vim-plug
@@ -69,14 +70,12 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
 
 "airline
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline_powerline_fonts = 1
 " gruber-darker sets to atomic
 " let g:airline_theme="atomic"
 
@@ -94,23 +93,9 @@ let g:LanguageClient_serverCommands = {
 "tagbar
 nmap <C-R> :TagbarToggle<CR>
 
-" autocomplete: ^n, ^x^f
-" Default file values
-" function LoadDefaultByFileType(filetype)
-"   let curFileSize = getfsize(@%)
-"   if (curFileSize==0) || (curFileSize==-1)
-"     let file_loc = "~\\AppData\\Local\\nvim\\fdefaults\\default." . a:filetype
-"     let failed = append(0, readfile(file_loc))
-"     if (failed)
-"       echo "Unable to add default text."
-"     else
-"       let &modified = 1
-"     endif
-"   endif
-" endfunction
-
-" autocmd FileType python call LoadDefaultByFileType("py")
-" autocmd FileType c call LoadDefaultByFileType("c")
-" autocmd FileType html call LoadDefaultByFileType("html")
-" autocmd FileType css call LoadDefaultByFileType("css")
-" USE SNIPPETS INSTEAD!
+"netrw
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 15
+autocmd VimEnter * :Vexplore
