@@ -15,9 +15,6 @@ set autochdir
 set wildmenu
 set path+=**
 
-" Tags, CTRL+] jumps to tag under cursor
-command! MakeTags !ctags -R .
-
 " Keys
 " copy/paste
 noremap <C-C> "+y
@@ -30,10 +27,10 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 " snippets
-nnoremap \dhtml :-1read ~/AppData/Local/nvim/fdefaults/default.html<CR>3jwf>a
-nnoremap \dc :-1read ~/AppData/Local/nvim/fdefaults/default.c<CR>3j$o
-nnoremap \dcss :-1read ~/AppData/Local/nvim/fdefaults/default.css<CR>2jo
-nnoremap \dpython :-1read ~/AppData/Local/nvim/fdefaults/default.py<CR>3j$o
+nnoremap \shtml :-1read ~/AppData/Local/nvim/fdefaults/default.html<CR>3jwf>a
+nnoremap \sc :-1read ~/AppData/Local/nvim/fdefaults/default.c<CR>3j$o
+nnoremap \scss :-1read ~/AppData/Local/nvim/fdefaults/default.css<CR>2jo
+nnoremap \spython :-1read ~/AppData/Local/nvim/fdefaults/default.py<CR>3j$o
 set mouse= "a
 
 " Indentation and tabs
@@ -62,40 +59,27 @@ set scrolloff=20
 
 "vim-plug
 call plug#begin('~\AppData\Local\nvim\myplugins')
-Plug 'https://github.com/vim-airline/vim-airline'
-Plug 'https://github.com/vim-syntastic/syntastic'
-Plug 'https://github.com/preservim/tagbar'
-Plug 'https://github.com/davidhalter/jedi-vim'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'neovim/nvim-lspconfig'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 "airline
 let g:airline#extensions#tabline#enabled = 1
-" gruber-darker sets to atomic
-" let g:airline_theme="atomic"
 
-"minimap
-let g:minimap_width = 10
-let g:minimap_auto_start = 1
-let g:minimap_auto_start_win_enter = 1
+"nvim-lspconfig
+lua << EOF
+require'lspconfig'.pyright.setup{}
+require'lspconfig'.clangd.setup{}
+EOF
 
-"languageclient-neovim
-let g:LanguageClient_serverCommands = {
-  \ 'cpp': ['clangd'],
-  \ 'c' : ['clangd'],
-  \ }
-
-"tagbar
-nmap <C-R> :TagbarToggle<CR>
+" Tags, CTRL+] jumps to tag under cursor, CTRL+N for autocomplete
+command! MakeTags !ctags -R .
 
 "netrw
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_browse_split = 4
 let g:netrw_winsize = 15
-autocmd VimEnter * :Vexplore
