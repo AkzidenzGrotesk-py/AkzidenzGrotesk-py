@@ -1,7 +1,7 @@
 " Gruber Darker Theme, by rexim, reinterpreted for (n)vim.
 " See: https://github.com/rexim/gruber-darker-theme
 " *NOT* an exact port, simply what I thought looked nice.
-* It looks fine with https://github.com/vim-scripts/CSApprox for terminal colours
+" It looks fine with https://github.com/vim-scripts/CSApprox for terminal colours
 
 " Init
 highlight clear
