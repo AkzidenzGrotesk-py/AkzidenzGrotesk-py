@@ -26,12 +26,16 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+" dismiss highlights
+map <BS> :noh<CR>
 " snippets
 nnoremap \shtml :-1read ~/AppData/Local/nvim/fdefaults/default.html<CR>3jwf>a
 nnoremap \sc :-1read ~/AppData/Local/nvim/fdefaults/default.c<CR>3j$o
 nnoremap \scss :-1read ~/AppData/Local/nvim/fdefaults/default.css<CR>2jo
 nnoremap \spython :-1read ~/AppData/Local/nvim/fdefaults/default.py<CR>3j$o
+nnoremap \sjava :-1read ~/AppData/Local/nvim/fdefaults/default.java<CR>wwcw
 set mouse= "a
+
 
 " Indentation and tabs
 set tabstop=2
@@ -73,6 +77,7 @@ let g:airline#extensions#tabline#enabled = 1
 lua << EOF
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.clangd.setup{}
+require'lspconfig'.jdtls.setup{}
 EOF
 
 " Tags, CTRL+] jumps to tag under cursor, CTRL+N for autocomplete
