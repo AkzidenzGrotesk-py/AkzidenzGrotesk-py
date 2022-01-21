@@ -55,6 +55,7 @@ colorscheme gruber-darker
 set list
 set listchars=tab:→\ ,space:·,nbsp:␣,trail:X,eol:\ ,precedes:«,extends:»
 set scrolloff=20
+set nowrap
 
 "vim-plug
 call plug#begin('/Users/k/.config/nvim/myplugins/')
@@ -63,6 +64,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'neovim/nvim-lspconfig'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'jiangmiao/auto-pairs'
+" for writing
+Plug 'junegunn/goyo.vim'
+Plug 'reedes/vim-pencil'
 call plug#end()
 
 "airline
@@ -71,7 +75,9 @@ let g:airline#extensions#tabline#enabled = 1
 "nvim-lspconfig
 lua << EOF
 require'lspconfig'.pyright.setup{}
-require'lspconfig'.clangd.setup{}
+require'lspconfig'.clangd.setup{
+  cmd = { "/usr/local/opt/llvm/bin/clangd" }
+}
 require'lspconfig'.jdtls.setup{}
 EOF
 
@@ -83,3 +89,22 @@ let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_browse_split = 4
 let g:netrw_winsize = 15
+
+"Writing mode
+"Individual functions to ensure right configuration
+function NoWriterMode()
+  Goyo!
+  HardPencil
+  set nospell
+  set nowrap
+  set notitle
+endfunction
+function WriterMode()
+  Goyo
+  SoftPencil
+  set spell spelllang=en_ca
+  set wrap
+  set title
+endfunction
+command Writer call WriterMode()
+command NoWriter call NoWriterMode()
